@@ -1,0 +1,103 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Копирование текста таблиц из Excel в Word" Height="450" Width="873"
+        Background="#FFFAFA">
+
+    <Grid x:Name="ЭНИ" RenderTransformOrigin="0.473,0.541">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="245*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="234*"/>
+            <ColumnDefinition Width="362*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="14.467"/>
+            <RowDefinition Height="2.8"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0"/>
+        </Grid.RowDefinitions>
+
+        <!-- Excel File Selection -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5,0,13,5" Grid.ColumnSpan="4">
+            <TextBlock Text="Файл Excel:"/>
+            <TextBox x:Name="excelFilePathTextBox" Width="300" Margin="5"/>
+            <Button Content="Выбрать файл" Click="SelectExcelFile_Click" Margin="5" Width="100"/>
+        </StackPanel>
+
+        <!-- Word File Selection -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="2,2,10,3" Grid.ColumnSpan="4">
+            <TextBlock Text="Файл Word:"/>
+            <TextBox x:Name="wordFilePathTextBox" Width="300" Margin="5"/>
+            <Button Content="Выбрать файл" Click="SelectWordFile_Click" Margin="5" Width="100"/>
+        </StackPanel>
+
+        <!-- Sheet Selection -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5,5,5,5" Grid.ColumnSpan="5">
+            <TextBlock Text="Выберите лист:"/>
+            <ComboBox x:Name="sheetComboBox" Width="300" SelectionChanged="sheetComboBox_SelectionChanged" Margin="5"/>
+        </StackPanel>
+
+
+
+
+
+        <!-- Word Column Selection -->
+        <StackPanel Grid.Row="9" Orientation="Horizontal" Margin="-3,0,0,-17" Grid.ColumnSpan="5" HorizontalAlignment="Left" Grid.RowSpan="2">
+            <TextBlock Text="Колонки Word:"/>
+            <ComboBox x:Name="wordColumn1" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn2" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn3" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn4" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn5" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn6" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn7" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn8" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn9" Width="50" Margin="5"/>
+            <ComboBox x:Name="wordColumn10" Width="50" Margin="5"/>
+        </StackPanel>
+
+        <!-- Number of Columns Selection -->
+        <StackPanel Grid.Row="8" Orientation="Horizontal" Margin="0,56,10,-64" Grid.ColumnSpan="5" Grid.RowSpan="3">
+            <TextBlock><Run Text="Кол"/><Run Language="ru-ru" Text="ичество"/><Run Text=" копируемых столбцов:"/></TextBlock>
+            <ComboBox x:Name="numberOfColumnsComboBox" Width="92" SelectionChanged="numberOfColumnsComboBox_SelectionChanged">
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="6"/>
+                <ComboBoxItem Content="7"/>
+                <ComboBoxItem Content="8"/>
+                <ComboBoxItem Content="9"/>
+                <ComboBoxItem Content="10"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Excel Column Selection -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,2,181,2" Grid.ColumnSpan="5" Grid.RowSpan="2">
+            <TextBlock Text="Колонки Excel:"/>
+            <ComboBox x:Name="excelColumn1" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn2" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn3" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn4" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn5" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn6" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn7" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn8" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn9" Width="50" Margin="5"/>
+            <ComboBox x:Name="excelColumn10" Width="50" Margin="5"/>
+        </StackPanel>
+
+        <!-- Copy Data Button -->
+        <Button Grid.Row="8" Content="Копировать данные" Click="CopyData_Click" Width="150" HorizontalAlignment="Center" Margin="0,159,0,-179" Grid.Column="3" Grid.RowSpan="3"/>
+    </Grid>
+</Window>
